@@ -20,6 +20,7 @@
 #define __GNU_SOURCE		 
 #include <signal.h>
 #include <errno.h>
+#include "dijsktra.h"
 
 int main(int argc, char *argv[]) {
      return 0;

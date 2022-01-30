@@ -21,11 +21,9 @@ Distance of node4=60
 
 
 #include<stdio.h>
+#include"dijsktra.h"
 #define INFINITY 9999
-#define MAX 10
- 
-void dijkstra(int G[MAX][MAX],int n,int startnode);
- 
+  
 int main()
 {
 	int G[MAX][MAX],i,j,n,u;
@@ -77,7 +75,7 @@ void dijkstra(int G[MAX][MAX],int n,int startnode)
 		mindistance=INFINITY;
 		
 		//nextnode gives the node at minimum distance
-		for(i=0;i<n;i++)
+		for(i=0;i<n;i++){
 			if(distance[i]<mindistance&&!visited[i])
 			{
 				mindistance=distance[i];
@@ -93,6 +91,7 @@ void dijkstra(int G[MAX][MAX],int n,int startnode)
 						distance[i]=mindistance+cost[nextnode][i];
 						pred[i]=nextnode;
 					}
+		}
 		count++;
 	}
  
