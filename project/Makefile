@@ -17,7 +17,7 @@ SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
 OBJ_FILES = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_FILES))
 EXE_FILES =  $(SERVER) $(CLIENT)
 
-.PHONY: all debug sanitize clean dir help
+.PHONY: all debug sanitize clean dir help server client
 all: $(OBJ_FILES) $(SERVER) $(CLIENT)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
@@ -29,6 +29,11 @@ $(SERVER): $(OBJ_DIR)/Graph_Server.o $(CSAPP)
 $(CLIENT): $(OBJ_DIR)/Result_Client.o $(CSAPP)
 	$(CC) $(OFLAGS) $(DFLAGS)
 
+
+server: $(SERVER)
+	./Graph_Server
+client: $(CLIENT)
+	./Result_Client
 
 ## debug: Compila usando la opción -g para facilitar la depuración con gdb.
 debug: DFLAGS = -g

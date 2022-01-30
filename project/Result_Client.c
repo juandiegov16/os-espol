@@ -1,3 +1,5 @@
+/*Fuente del comportamiento cliente-servidor: https://github.com/juandiegov16/proyecto-fileserver (Proyecto MÍO de Programación de Sistemas*/
+
 /* Linux Headers */
 #include <sys/mman.h> 		/* Includes mmap(), unmmap(). */
 #include <sys/stat.h>
@@ -23,5 +25,6 @@
 #include "dijsktra.h"
 
 int main(int argc, char *argv[]) {
+     printf("Ejecutando cliente.\n");
      return 0;
 }

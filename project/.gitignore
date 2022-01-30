@@ -42,6 +42,7 @@
 *.hex
 Graph_Server
 Result_Client
+proyecto-OS.code-workspace
 
 # Debug files
 *.dSYM/
