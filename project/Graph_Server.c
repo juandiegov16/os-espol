@@ -34,8 +34,6 @@ void atender_cliente(int connfd);
 void recoger_hijos(int signal);
 void connection_error(int connfd);
 
-
-
 int main(int argc, char *argv[])
 {
      int opt;
@@ -129,13 +127,15 @@ void *thread(void *vargp)
      return NULL;
 }
 
-void atender_cliente(int connfd){
+void atender_cliente(int connfd)
+{
      printf("Cliente en atención.\n");
 }
 
-void recoger_hijos(int signal){
-  while(waitpid(-1, 0, WNOHANG) >0)
-  ;
+void recoger_hijos(int signal)
+{
+     while (waitpid(-1, 0, WNOHANG) > 0)
+          ;
 
-  return;
+     return;
 }
